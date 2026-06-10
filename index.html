@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="COGITO ERGO SUM - Silent Breach. Terminal portátil com autenticação NFC multicamada, segurança hierárquica e hacking ético para a SCCT 2026.">
+    <meta name="author" content="Miguel (GL) e Equipe COGITO">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>COGITO ERGO SUM | Silent Breach</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='85' fill='%2300ff00'%3E⚡%3C/text%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 100%);
+            color: #e0e0e0;
+            font-family: 'Courier New', 'Fira Code', 'Source Code Pro', monospace;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* scrollbar customizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffcc00;
+        }
+
+        header {
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #00ff00;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 255, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #ffcc00;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 80%;
+        }
+
+        nav a:hover, nav a.active {
+            color: #ffcc00;
+            text-shadow: 0 0 5px #ffcc00;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            scroll-margin-top: 80px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: radial-gradient(circle at center, rgba(0, 255, 0, 0.05) 0%, transparent 70%);
+            border-radius: 20px;
+        }
+
+        .ascii pre {
+            color: #00ff00;
+            font-size: 0.55rem;
+            overflow-x: auto;
+            white-space: pre;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 0 3px #00ff00;
+            animation: glowPulse 3s infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { text-shadow: 0 0 2px #00ff00; }
+            50% { text-shadow: 0 0 8px #00ff00; }
+        }
+
+        h1 {
+            color: #00ff00;
+            font-size: 2.8rem;
+            text-align: center;
+            letter-spacing: 5px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px #00ff00;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: skew(0deg, 0deg); opacity: 1; }
+            95% { transform: skew(0deg, 0deg); opacity: 1; }
+            96% { transform: skew(2deg, 1deg); opacity: 0.9; }
+            97% { transform: skew(-1deg, -0.5deg); opacity: 1; }
+        }
+
+        .subtitle {
+            color: #ffcc00;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .description {
+            max-width: 700px;
+            margin: 1rem auto;
+            font-size: 1.1rem;
+            text-align: center;
+            background: rgba(0, 255, 0, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .buttons {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn.green {
+            background: linear-gradient(135deg, #00ff00, #00aa00);
+            color: #0a0a0a;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+        }
+        .btn.green:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.6);
+        }
+
+        .btn.yellow {
+            background: linear-gradient(135deg, #ffcc00, #ff9900);
+            color: #0a0a0a;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+        }
+        .btn.yellow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+        }
+
+        .section-title {
+            color: #00ff00;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #ffcc00;
+            padding-left: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 1.8rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 1.5rem;
+            cursor: grab;
+        }
+        .cards-container:active {
+            cursor: grabbing;
+        }
+
+        .card {
+            min-width: 300px;
+            background: linear-gradient(135deg, #111, #1a1a1a);
+            border-radius: 16px;
+            padding: 1.8rem;
+            scroll-snap-align: start;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid #00ff00;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 255, 0, 0.2);
+        }
+
+        .card.red {
+            border-left-color: #ff0000;
+            background: linear-gradient(135deg, #1a0a0a, #110505);
+        }
+        .card.yellow {
+            border-left-color: #ffcc00;
+            background: linear-gradient(135deg, #1a1a0a, #111105);
+        }
+
+        .card h3 {
+            color: #fff;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        .card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #00ff00;
+            color: #0a0a0a;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background: linear-gradient(180deg, #050505, #020202);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #00ff00;
+            margin-top: 3rem;
+        }
+        footer a {
+            color: #00ff00;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        footer a:hover {
+            color: #ffcc00;
+            text-shadow: 0 0 5px #ffcc00;
+        }
+
+        #topBtn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #00ff00;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 26px;
+            cursor: pointer;
+            display: none;
+            z-index: 99;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+        #topBtn:hover {
+            transform: scale(1.1);
+            background: #ffcc00;
+            box-shadow: 0 0 20px #ffcc00;
+        }
+
+        @media (max-width: 768px) {
+            main { padding: 1rem; }
+            h1 { font-size: 1.8rem; letter-spacing: 2px; }
+            .ascii pre { font-size: 0.32rem; }
+            nav ul { gap: 0.5rem; }
+            nav a { padding: 0.3rem 0.6rem; font-size: 0.7rem; }
+            .btn { padding: 0.5rem 1.2rem; font-size: 0.8rem; }
+            .card { min-width: 260px; padding: 1.2rem; }
+            .section-title { font-size: 1.4rem; }
+            .description { font-size: 0.9rem; }
+        }
+
+        @media (max-width: 480px) {
+            .ascii pre { font-size: 0.24rem; }
+            .card h3 { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a role="button" tabindex="0" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})" class="active">INÍCIO</a></li>
+            <li><a role="button" tabindex="0" onclick="document.getElementById('conceito').scrollIntoView({behavior: 'smooth'})">CONCEITO</a></li>
+            <li><a role="button" tabindex="0" onclick="document.getElementById('seguranca').scrollIntoView({behavior: 'smooth'})">SEGURANÇA</a></li>
+            <li><a role="button" tabindex="0" onclick="document.getElementById('equipe').scrollIntoView({behavior: 'smooth'})">EQUIPE</a></li>
+            <li><a role="button" tabindex="0" onclick="document.getElementById('tecnologias').scrollIntoView({behavior: 'smooth'})">TECNOLOGIAS</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home">
+        <div class="hero">
+            <div class="ascii">
+                <pre>
+░░▒▓██████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓██████▓▒░       ░▒▓████████▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░        ░▒▓███████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██████████████▓▒░  
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒▒▓███▓▒░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓██████▓▒░ ░▒▓███████▓▒░░▒▓█▓▒▒▓███▓▒░▒▓█▓▒░░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
+ ░▒▓██████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░       ░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░       ░▒▓███████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
+                </pre>
+            </div>
+            <h1>COGITO ERGO SUM</h1>
+            <p class="subtitle">Silent Breach</p>
+            <p class="description">
+                ⚡ Um terminal portátil disfarçado de objeto comum.<br>
+                🔐 Autenticação por NFC + senha. Camadas de acesso. Controle hierárquico.
+            </p>
+            <div class="buttons">
+                <a class="btn green" role="button" tabindex="0" onclick="document.getElementById('conceito').scrollIntoView({behavior: 'smooth'})">🎯 CONHEÇA O PROJETO</a>
+                <a class="btn yellow" role="button" tabindex="0" onclick="document.getElementById('tecnologias').scrollIntoView({behavior: 'smooth'})">⚙️ TECNOLOGIAS</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="conceito">
+        <h2 class="section-title">🎭 CONCEITO</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>🕵️ Subversão Silenciosa</h3>
+                <p>Uma maleta ou mochila comum. Ninguém suspeita. Dentro, um terminal completo para segurança e automação.</p>
+                <span class="badge">STEALTH</span>
+            </div>
+            <div class="card">
+                <h3>🧠 Inspiração</h3>
+                <p>Pessoas comuns carregando ferramentas extraordinárias. O desconhecido dentro do cotidiano.</p>
+                <span class="badge">MR ROBOT VIBES</span>
+            </div>
+            <div class="card red">
+                <h3>⚡ Inquietação</h3>
+                <p>Provoca curiosidade e reflexão: quem controla o acesso? O que está escondido à vista?</p>
+                <span class="badge">DISRUPTIVE</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="seguranca">
+        <h2 class="section-title">🔐 SEGURANÇA POR CAMADAS</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>📄 Camada 1 — Documentação</h3>
+                <p>nithw4: acesso a relatórios, slides, modo apresentação e logs de leitura.</p>
+            </div>
+            <div class="card">
+                <h3>🛠️ Camada 2 — Hardware</h3>
+                <p>Diego e Felipe: diagnóstico, testes de sensores, montagem e manutenção.</p>
+            </div>
+            <div class="card yellow">
+                <h3>🎨 Camada 3 — Design</h3>
+                <p>Mgames: interface visual, temas, feedback estético e modo decoração.</p>
+            </div>
+            <div class="card red">
+                <h3>💀 Camada 4 — Root</h3>
+                <p>GLTF: terminal completo, rede, debug, hard reset — controle total.</p>
+            </div>
+            <div class="card">
+                <h3>👨‍🏫 Camada 0 — Supervisor</h3>
+                <p>Professor Mauro: override, logs completos, supervisão e auditoria.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe">
+        <h2 class="section-title">👥 EQUIPE COGITO</h2>
+        <div class="cards-container">
+            <div class="card"><h3>📖 Lucas</h3><p>Documentação / Palestra</p><span class="badge">ORADOR</span></div>
+            <div class="card"><h3>🔧 Diego</h3><p>Montagem do PLOT</p><span class="badge">HARDWARE</span></div>
+            <div class="card"><h3>⚙️ Felipe</h3><p>Montagem do PLOT</p><span class="badge">HARDWARE</span></div>
+            <div class="card yellow"><h3>🎨 Mmages</h3><p>Decoração / Design</p><span class="badge">UI/UX</span></div>
+            <div class="card red"><h3>💻 Miguel (GL)</h3><p>Arquitetura / Código / Integração</p><span class="badge">ROOT</span></div>
+            <div class="card"><h3>🧪 Prof. Mauro</h3><p>Orientação / Eletrônica</p><span class="badge">SUPERVISOR</span></div>
+        </div>
+    </section>
+
+    <section id="tecnologias">
+        <h2 class="section-title">🛠️ TECNOLOGIAS</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>📱 Hardware</h3>
+                <p>Tablet Xiaomi Redmi Pad 2, ESP32/ESP8266, módulo NFC PN532/RC522, cartões RFID, teclado/mouse Bluetooth.</p>
+            </div>
+            <div class="card">
+                <h3>🐧 Software Base</h3>
+                <p>Termux, Ubuntu XFCE4, X11, Python, C++, Arduino IDE, Shell Script.</p>
+            </div>
+            <div class="card red">
+                <h3>🔒 Segurança</h3>
+                <p>Autenticação NFC + senha, camadas de permissão, comunicação criptografada via rede local.</p>
+            </div>
+            <div class="card yellow">
+                <h3>🌐 Rede & Hacking</h3>
+                <p>Rede privada local, Kali Linux (WSL), nmap, netcat, scripts personalizados de varredura.</p>
+            </div>
+            <div class="card">
+                <h3>🎨 Front-end</h3>
+                <p>HTML5, CSS3 animado, JavaScript puro, GitHub Pages, design responsivo e imersivo.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>🚀 COGITO ERGO SUM — Silent Breach • Projeto de Tecnologia para a XXIV SCCT</p>
+    <p>📡 <a href="https://github.com/seu-usuario/cogito-site" target="_blank">Repositório oficial</a> • © 2026 Equipe COGITO • ETER</p>
+    <p style="margin-top: 0.5rem; font-size: 0.7rem;">⚡ Autenticação multicamada • NFC + Senha • Terminal portátil</p>
+</footer>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Voltar ao topo">↑</button>
+
+<script>
+    // Botão voltar ao topo
+    const topBtn = document.getElementById('topBtn');
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = 'block';
+        } else {
+            topBtn.style.display = 'none';
+        }
+    };
+
+    // Active link highlight com scroll spy
+    const sections = ['home', 'conceito', 'seguranca', 'equipe', 'tecnologias'];
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        for (let section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    current = section;
+                    break;
+                }
+            }
+        }
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const onclickText = link.getAttribute('onclick') || '';
+            if (onclickText.includes(current) || (current === 'home' && onclickText.includes('home'))) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Efeito de digitação no console (hacker style)
+    console.log("%c[COGITO ERGO SUM] %cSistema de acesso inicializado.", "color: #00ff00; font-size: 14px;", "color: #ffcc00;");
+    console.log("%c[SCCT 2026] %cModo competição ativado. Equipe preparada.", "color: #ff0000;", "color: #ccc;");
+    console.log("%c>>> Silent Breach <<<", "color: #00ff00; font-size: 12px; font-weight: bold;");
+
+    // Cards com cursor de arrasto suave
+    const containers = document.querySelectorAll('.cards-container');
+    containers.forEach(container => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.style.cursor = 'grabbing';
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            container.scrollLeft = scrollLeft - walk;
+        });
+    });
+</script>
+</body>
+</html>
