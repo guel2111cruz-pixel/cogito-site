@@ -11,7 +11,7 @@
 
     <meta
         name="description"
-        content="COGITO ERGO SUM - Ecossistema de projetos experimentais. Conheça o Silent Breach, projeto de conscientização em cibersegurança apresentado na SCCT 2026."
+        content="COGITO ERGO SUM: ecossistema de projetos. Conheça Silent Breach, uma experiência de conscientização em cibersegurança."
     >
 
     <meta
@@ -924,132 +924,35 @@
 
         }
 
-    </style>
-</head>
-
-
-<body>
-
-
-    <!-- ==================================================
-         BOTÃO DO MENU
-         ================================================== -->
-
-    <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-    >
-        ☰
-    </button>
-
-
-    <!-- ==================================================
-         OVERLAY
-         ================================================== -->
-
-    <div
-        class="sidebar-overlay"
-        id="sidebarOverlay"
-    ></div>
-
-
-    <!-- ==================================================
-         SIDEBAR
-         ================================================== -->
-
-    <aside
-        class="sidebar"
-        id="sidebar"
-    >
-
-        <div class="sidebar-header">
-
-            <span>
-                COGITO // MENU
-            </span>
-
-            <button
-                class="sidebar-close"
-                id="sidebarClose"
-                aria-label="Fechar menu"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <nav class="sidebar-nav">
-
-            <a href="#home">
-                &gt; INÍCIO
-            </a>
-
-            <a href="#silent-breach">
-                &gt; SILENT BREACH
-            </a>
-
-            <a href="#projetos">
-                &gt; PROJETOS COGITO
-            </a>
-
-            <a href="#diario">
-                &gt; DIÁRIO DE BORDO
-            </a>
-
-            <a href="#equipe">
-                &gt; EQUIPE
-            </a>
-
-            <a href="#quiz">
-                &gt; QUIZ
-                <span class="menu-lock">
-                    [LOCKED]
-                </span>
-            </a>
-
-            <a href="#contato">
-                &gt; CONTATO
-            </a>
-
-        </nav>
-
-
-        <div class="sidebar-footer">
-
-            COGITO ERGO SUM
-
-            <br>
-
-            <span>
-                v2.0 // BETA
-            </span>
-
-        </div>
-
-    </aside>
-
-
-    <!-- ==================================================
-         CONTEÚDO
-         ================================================== -->
-
-    <main>
-
-
-        <!-- ==================================================
-             INÍCIO
-             ================================================== -->
-
-        <section id="home">
-
-            <div class="hero">
-
-                <div class="ascii">
-
-<pre>
+    
+/* V2: adaptações sobre o visual original. */
+[hidden]{display:none!important} a{color:#00ff00} button,input{font:inherit}
+:focus-visible{outline:2px solid #ffcc00;outline-offset:5px}
+.skip{position:fixed;top:-100px;left:70px;z-index:1200;background:#050505;padding:12px}.skip:focus{top:12px}
+main{padding-top:4rem}.sidebar{height:100dvh;overflow-y:auto;visibility:hidden}.sidebar.open{visibility:visible}
+.cards-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));overflow:visible;cursor:auto}
+.card{min-width:0}.card:hover{transform:translateY(-4px)}
+.section-title{font-size:clamp(1.3rem,4vw,2rem)}h1{font-size:clamp(1.65rem,5vw,2.8rem);overflow-wrap:anywhere}
+.intro{max-width:850px;margin:0 0 1.8rem;color:#bbb}.terminal{border:1px solid #244524;background:#080e08;padding:clamp(1rem,4vw,2rem);border-radius:12px;margin-top:2rem}
+.terminal h3,.eyebrow{color:#ffcc00}.eyebrow{letter-spacing:2px;font-size:.8rem;margin-bottom:1rem}
+.terminal p+p{margin-top:1rem}.btn{border:0;font-family:inherit;font-size:.9rem}.status{color:#ffcc00;min-height:1.6em;margin:1rem 0}
+input[type=text]{background:#050505;color:#fff;border:1px solid #4d764d;border-radius:6px;padding:.8rem;width:min(100%,320px);text-transform:uppercase}
+.unlock-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}fieldset{border:1px solid #315031;padding:1.2rem;margin:1.5rem 0;min-width:0}legend{color:#ffcc00;padding:0 .5rem;font-weight:bold}
+.answer{display:flex;gap:.75rem;padding:.8rem;border-radius:6px;cursor:pointer}.answer:hover{background:#142014}.answer input{accent-color:#00ff00;flex-shrink:0}.feedback{margin-top:1rem;color:#ddd}
+.log{list-style:none;border-left:1px solid #00ff00;padding-left:1.5rem}.log li{padding:0 0 2rem}.log h3{color:#ffcc00}.log p{max-width:850px}
+footer p+p{margin-top:.8rem}body.menu-open{overflow:hidden}.ascii{max-width:100%;overflow:hidden}.ascii pre{font-size:clamp(2px,.55vw,8.8px);overflow:hidden}
+@media(max-width:600px){.hero{padding:2rem 0}.buttons{gap:1rem}.btn{padding:.8rem 1.2rem}.section-title{padding-left:.8rem;letter-spacing:1px}.card{padding:1.3rem}footer{padding:2rem 1rem 5rem}.sidebar-header{padding:1rem}.sidebar-nav{padding:.5rem 0}.sidebar-nav a{padding:.7rem 1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head><body>
+<a class="skip" href="#home">Pular para o conteúdo</a>
+<button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false">☰</button>
+<div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+<aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-label="Menu principal" inert>
+<div class="sidebar-header"><span>COGITO // MENU</span><button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">×</button></div>
+<nav class="sidebar-nav" aria-label="Seções"><a href="#home">&gt; Início</a><a href="#silent-breach">&gt; Silent Breach</a><a href="#projetos">&gt; Projetos COGITO</a><a href="#diario">&gt; Diário de Bordo</a><a href="#equipe">&gt; Equipe</a><a href="#quiz">&gt; Quiz <span class="menu-lock">[LOCKED]</span></a><a href="#contato">&gt; Contato</a></nav><div class="sidebar-footer">COGITO ERGO SUM<br><span>v2.0 // PENSAR. CRIAR. COMPARTILHAR.</span></div></aside>
+<main id="main-content">
+<section id="home" tabindex="-1" aria-labelledby="hero-title"><div class="hero"><div class="ascii" aria-hidden="true"><pre>
 ░░▒▓██████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓██████▓▒░       ░▒▓████████▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░        ░▒▓███████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓██████████████▓▒░
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░
 ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░
@@ -1057,813 +960,116 @@
 ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░
  ░▒▓██████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░       ░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░       ░▒▓███████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░
-</pre>
-
-                </div>
-
-
-                <h1>
-                    COGITO ERGO SUM
-                </h1>
-
-                <p class="subtitle">
-                    Silent Breach
-                </p>
-
-
-                <!--
-                    ESTE TEXTO AINDA SERÁ SUBSTITUÍDO
-                    NA PRÓXIMA ETAPA DA V2
-                -->
-
-                <p class="description">
-
-                    ⚡ Um terminal portátil disfarçado de objeto comum.
-
-                    <br>
-
-                    🔐 Autenticação por NFC + senha.
-                    Camadas de acesso.
-                    Controle hierárquico.
-
-                </p>
-
-
-                <div class="buttons">
-
-                    <a
-                        class="btn green"
-                        href="#conceito"
-                    >
-                        🎯 CONHEÇA O PROJETO
-                    </a>
-
-                    <a
-                        class="btn yellow"
-                        href="#tecnologias"
-                    >
-                        ⚙️ TECNOLOGIAS
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             CONCEITO ANTIGO
-             ================================================== -->
-
-        <section id="conceito">
-
-            <h2 class="section-title">
-                🎭 CONCEITO
-            </h2>
-
-
-            <div class="cards-container">
-
-
-                <div class="card">
-
-                    <h3>
-                        🕵️ Subversão Silenciosa
-                    </h3>
-
-                    <p>
-                        Uma maleta ou mochila comum.
-                        Ninguém suspeita.
-                        Dentro, um terminal completo
-                        para segurança e automação.
-                    </p>
-
-                    <span class="badge">
-                        STEALTH
-                    </span>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        🧠 Inspiração
-                    </h3>
-
-                    <p>
-                        Pessoas comuns carregando
-                        ferramentas extraordinárias.
-                        O desconhecido dentro do cotidiano.
-                    </p>
-
-                    <span class="badge">
-                        MR ROBOT VIBES
-                    </span>
-
-                </div>
-
-
-                <div class="card red">
-
-                    <h3>
-                        ⚡ Inquietação
-                    </h3>
-
-                    <p>
-                        Provoca curiosidade e reflexão:
-                        quem controla o acesso?
-                        O que está escondido à vista?
-                    </p>
-
-                    <span class="badge">
-                        DISRUPTIVE
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             SEGURANÇA ANTIGA
-             ================================================== -->
-
-        <section id="seguranca">
-
-            <h2 class="section-title">
-                🔐 SEGURANÇA POR CAMADAS
-            </h2>
-
-
-            <div class="cards-container">
-
-
-                <div class="card">
-
-                    <h3>
-                        📄 Camada 1 — Documentação
-                    </h3>
-
-                    <p>
-                        nithw4: acesso a relatórios,
-                        slides, modo apresentação
-                        e logs de leitura.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        🛠️ Camada 2 — Hardware
-                    </h3>
-
-                    <p>
-                        Diego e Felipe:
-                        diagnóstico, testes de sensores,
-                        montagem e manutenção.
-                    </p>
-
-                </div>
-
-
-                <div class="card yellow">
-
-                    <h3>
-                        🎨 Camada 3 — Design
-                    </h3>
-
-                    <p>
-                        Mgames:
-                        interface visual,
-                        temas, feedback estético
-                        e modo decoração.
-                    </p>
-
-                </div>
-
-
-                <div class="card red">
-
-                    <h3>
-                        💀 Camada 4 — Root
-                    </h3>
-
-                    <p>
-                        GLTF:
-                        terminal completo,
-                        rede, debug,
-                        hard reset — controle total.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        👨‍🏫 Camada 0 — Supervisor
-                    </h3>
-
-                    <p>
-                        Professor Mauro:
-                        override, logs completos,
-                        supervisão e auditoria.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             EQUIPE
-             ================================================== -->
-
-        <section id="equipe">
-
-            <h2 class="section-title">
-                👥 EQUIPE COGITO
-            </h2>
-
-
-            <div class="cards-container">
-
-
-                <div class="card">
-
-                    <h3>
-                        📖 Lucas
-                    </h3>
-
-                    <p>
-                        Documentação / Palestra
-                    </p>
-
-                    <span class="badge">
-                        ORADOR
-                    </span>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        🔧 Diego
-                    </h3>
-
-                    <p>
-                        Montagem do PLOT
-                    </p>
-
-                    <span class="badge">
-                        HARDWARE
-                    </span>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        ⚙️ Felipe
-                    </h3>
-
-                    <p>
-                        Montagem do PLOT
-                    </p>
-
-                    <span class="badge">
-                        HARDWARE
-                    </span>
-
-                </div>
-
-
-                <div class="card yellow">
-
-                    <h3>
-                        🎨 Mgames
-                    </h3>
-
-                    <p>
-                        Decoração / Design
-                    </p>
-
-                    <span class="badge">
-                        UI/UX
-                    </span>
-
-                </div>
-
-
-                <div class="card red">
-
-                    <h3>
-                        💻 Miguel (GL)
-                    </h3>
-
-                    <p>
-                        Arquitetura /
-                        Código /
-                        Integração
-                    </p>
-
-                    <span class="badge">
-                        ROOT
-                    </span>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        🧪 Prof. Mauro
-                    </h3>
-
-                    <p>
-                        Orientação / Eletrônica
-                    </p>
-
-                    <span class="badge">
-                        SUPERVISOR
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             TECNOLOGIAS ANTIGAS
-             ================================================== -->
-
-        <section id="tecnologias">
-
-            <h2 class="section-title">
-                🛠️ TECNOLOGIAS
-            </h2>
-
-
-            <div class="cards-container">
-
-
-                <div class="card">
-
-                    <h3>
-                        📱 Hardware
-                    </h3>
-
-                    <p>
-                        Tablet Xiaomi Redmi Pad 2,
-                        ESP32/ESP8266,
-                        módulo NFC PN532/RC522,
-                        cartões RFID,
-                        teclado/mouse Bluetooth.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        🐧 Software Base
-                    </h3>
-
-                    <p>
-                        Termux,
-                        Ubuntu XFCE4,
-                        X11,
-                        Python,
-                        C++,
-                        Arduino IDE,
-                        Shell Script.
-                    </p>
-
-                </div>
-
-
-                <div class="card red">
-
-                    <h3>
-                        🔒 Segurança
-                    </h3>
-
-                    <p>
-                        Autenticação NFC + senha,
-                        camadas de permissão,
-                        comunicação criptografada
-                        via rede local.
-                    </p>
-
-                </div>
-
-
-                <div class="card yellow">
-
-                    <h3>
-                        🌐 Rede & Hacking
-                    </h3>
-
-                    <p>
-                        Rede privada local,
-                        Kali Linux (WSL),
-                        nmap,
-                        netcat,
-                        scripts personalizados
-                        de varredura.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <h3>
-                        🎨 Front-end
-                    </h3>
-
-                    <p>
-                        HTML5,
-                        CSS3 animado,
-                        JavaScript puro,
-                        GitHub Pages,
-                        design responsivo
-                        e imersivo.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ==================================================
-         FOOTER
-         ================================================== -->
-
-    <footer>
-
-        <p>
-            🚀 COGITO ERGO SUM — Silent Breach
-            • Projeto de Tecnologia para a XXIV SCCT
-        </p>
-
-        <p>
-
-            📡
-
-            <a
-                href="https://github.com/seu-usuario/cogito-site"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Repositório oficial
-            </a>
-
-            • © 2026 Equipe COGITO • ETER
-
-        </p>
-
-        <p
-            style="
-                margin-top: 0.5rem;
-                font-size: 0.7rem;
-            "
-        >
-            ⚡ Autenticação multicamada
-            • NFC + Senha
-            • Terminal portátil
-        </p>
-
-    </footer>
-
-
-    <!-- ==================================================
-         VOLTAR AO TOPO
-         ================================================== -->
-
-    <button
-        id="topBtn"
-        title="Voltar ao topo"
-        aria-label="Voltar ao topo"
-    >
-        ↑
-    </button>
-
-
-    <!-- ==================================================
-         JAVASCRIPT
-         ================================================== -->
-
-    <script>
-
-
-        /* ==================================================
-           SIDEBAR
-           ================================================== */
-
-        const menuToggle =
-            document.getElementById('menuToggle');
-
-        const sidebar =
-            document.getElementById('sidebar');
-
-        const sidebarClose =
-            document.getElementById('sidebarClose');
-
-        const sidebarOverlay =
-            document.getElementById('sidebarOverlay');
-
-
-        function abrirMenu() {
-
-            sidebar.classList.add('open');
-
-            sidebarOverlay.classList.add('active');
-
-            menuToggle.setAttribute(
-                'aria-expanded',
-                'true'
-            );
-
-        }
-
-
-        function fecharMenu() {
-
-            sidebar.classList.remove('open');
-
-            sidebarOverlay.classList.remove('active');
-
-            menuToggle.setAttribute(
-                'aria-expanded',
-                'false'
-            );
-
-        }
-		
-		menuToggle.addEventListener(
-    'click',
-    abrirMenu
-);
-		
-/* ==================================================
-   ESCONDER MENU AO ROLAR PARA BAIXO
-   ================================================== */
-
+</pre></div>
+<p class="eyebrow">[ ECOSSISTEMA DE PROJETOS // V2.0 ]</p><h1 id="hero-title">COGITO ERGO SUM</h1><p class="subtitle">Penso, logo existo.</p>
+<p class="description">Um espaço para transformar curiosidade em projetos, conectar tecnologia e criatividade e compartilhar o que aprendemos.</p>
+<div class="terminal"><p class="eyebrow">&gt; PROJETO ATUAL</p><h2>Silent Breach</h2><p>Conscientização em cibersegurança por meio de palestra, demonstrações controladas e interação com o público.</p><p>O <strong>CyberDeck/PLOT</strong> é a ferramenta física de apoio dessa experiência.</p></div>
+<div class="buttons"><a class="btn green" href="#silent-breach">CONHEÇA O PROJETO</a><a class="btn yellow" href="#tecnologias">TECNOLOGIAS</a></div></div></section>
+<section id="silent-breach" aria-labelledby="title-silent-breach"><h2 class="section-title" id="title-silent-breach">01 // Silent Breach</h2><p class="intro">A tecnologia chama a atenção. A conversa transforma essa curiosidade em cuidado no dia a dia: reconhecer riscos, questionar mensagens e proteger informações.</p><div class="cards-container"><article class="card "><h3>Palestra</h3><p>Uma conversa sobre engenharia social, golpes digitais e hábitos que ajudam a proteger contas e dados.</p><span class="badge">CONSCIENTIZAÇÃO</span></article><article class="card "><h3>Demonstrações controladas</h3><p>Exemplos em ambiente autorizado para tornar riscos digitais visíveis e explicar como se prevenir.</p><span class="badge">APRENDER NA PRÁTICA</span></article><article class="card yellow"><h3>Interação com o público</h3><p>Perguntas, reflexão e um quiz para conectar os temas apresentados às decisões do cotidiano.</p><span class="badge">PARTICIPAÇÃO</span></article></div><div class="terminal"><h3>CyberDeck / PLOT</h3><p>Um notebook reaproveitado dá suporte físico às apresentações e demonstrações. O PLOT integra essa experiência como ferramenta: o projeto Silent Breach reúne também conteúdo, comunicação e participação do público.</p></div></section><section id="tecnologias" aria-labelledby="title-tecnologias"><h2 class="section-title" id="title-tecnologias">02 // Tecnologias</h2><div class="cards-container"><article class="card "><h3>Hardware reaproveitado</h3><p>Notebook reaproveitado na composição do CyberDeck/PLOT, com montagem voltada ao apoio das demonstrações.</p></article><article class="card "><h3>Kali Linux</h3><p>Ambiente de apoio ao estudo e às demonstrações de cibersegurança em cenários controlados.</p></article><article class="card "><h3>Ferramentas de demonstração</h3><p>Nmap, netcat e scripts personalizados, já citados na base do projeto, para explorar conceitos de rede em ambiente local autorizado.</p></article><article class="card yellow"><h3>Plataforma web</h3><p>HTML, CSS e JavaScript no site; GitHub Pages para publicação e repositório GitHub para acompanhar o código.</p></article></div></section><section id="projetos" aria-labelledby="title-projetos"><h2 class="section-title" id="title-projetos">03 // Projetos COGITO</h2><p class="intro">COGITO ERGO SUM é a plataforma que reúne os projetos. Silent Breach é o projeto atual desse ecossistema.</p><div class="cards-container"><article class="card "><h3>Silent Breach</h3><p>Conscientização em cibersegurança, demonstrações controladas e participação do público. <a href="#silent-breach">Explorar o projeto →</a></p><span class="badge">PROJETO ATUAL</span></article><article class="card yellow"><h3>Novos projetos</h3><p>Espaço reservado para futuras iniciativas. Detalhes serão publicados quando houver projetos definidos.</p><span class="badge">EM DESENVOLVIMENTO</span></article></div></section><section id="diario" aria-labelledby="title-diario"><h2 class="section-title" id="title-diario">04 // Diário de Bordo</h2><p class="intro">Um espaço para documentar o processo. Este resumo reúne o escopo atual e os registros que ainda precisam ser preenchidos pela equipe; não é um histórico de entregas concluídas.</p><ol class="log"><li><h3>[ CONTEXTO ATUAL ] Identidade</h3><p>COGITO como ecossistema, Silent Breach como projeto e CyberDeck/PLOT como ferramenta de apoio.</p></li><li><h3>[ A REGISTRAR ] Montagem e integração</h3><p>Espaço para documentar decisões de montagem do PLOT, ajustes e aprendizados, conforme forem confirmados pela equipe.</p></li><li><h3>[ A REGISTRAR ] Palestra e demonstrações</h3><p>Adicionar o roteiro validado, os cenários autorizados e as observações dos ensaios quando esses registros estiverem disponíveis.</p></li><li><h3>[ A REGISTRAR ] Aprendizados com o público</h3><p>Reunir dúvidas e reflexões após as interações, sem publicar dados pessoais dos participantes.</p></li></ol></section><section id="equipe" aria-labelledby="title-equipe"><h2 class="section-title" id="title-equipe">05 // Equipe</h2><div class="cards-container"><article class="card "><h3>Lucas</h3><p>Documentação / Palestra</p></article><article class="card "><h3>Diego</h3><p>Montagem do PLOT</p></article><article class="card "><h3>Felipe</h3><p>Montagem do PLOT</p></article><article class="card "><h3>Mgames</h3><p>Decoração / Design</p></article><article class="card "><h3>Miguel (GL)</h3><p>Arquitetura / Código / Integração</p></article><article class="card "><h3>Prof.ª Ingrid</h3><p>Orientação do Projeto</p></article></div></section><section id="quiz" aria-labelledby="title-quiz"><h2 class="section-title" id="title-quiz">06 // Quiz <span id="quizState">[LOCKED]</span></h2><p class="intro">Uma pausa para testar o que você aprendeu. Use o código informado pela equipe durante a experiência.</p><noscript><p>Ative o JavaScript para usar o menu e participar do quiz.</p></noscript><div class="terminal"><form id="unlockForm"><label for="accessCode">Código da experiência</label><div class="unlock-row"><input id="accessCode" type="text" autocomplete="off" spellcheck="false" required maxlength="80" aria-describedby="unlockStatus"><button class="btn green" type="submit">DESBLOQUEAR</button></div></form><p id="unlockStatus" class="status" role="status"></p><div id="quizContent" hidden><h3 id="quizHeading" tabindex="-1">Acesso liberado. Vamos pensar antes de clicar?</h3><form id="quizForm"><div id="questions"></div><button class="btn green" type="submit">CONFERIR RESPOSTAS</button><button class="btn yellow" type="button" id="resetQuiz">TENTAR NOVAMENTE</button></form><p id="quizResult" class="status" role="status" tabindex="-1"></p><button type="button" class="btn yellow" id="lockQuiz">BLOQUEAR QUIZ</button></div></div></section><section id="contato" aria-labelledby="title-contato"><h2 class="section-title" id="title-contato">07 // Contato</h2><div class="terminal"><h3>Continue a conversa</h3><p>Durante a apresentação, procure a equipe COGITO para tirar dúvidas sobre o projeto.</p><p>Para acompanhar o código do site, acesse o <a href="https://github.com/guel2111cruz-pixel/cogito-site" target="_blank" rel="noopener noreferrer">repositório oficial no GitHub ↗</a>.</p></div></section></main><footer><p>COGITO ERGO SUM // Ecossistema de projetos</p><p>Silent Breach — conscientização em cibersegurança.</p><p>© 2026 Equipe COGITO · <a href="https://github.com/guel2111cruz-pixel/cogito-site" target="_blank" rel="noopener noreferrer">Repositório oficial ↗</a> · <a href="#home">Início ↑</a></p></footer><button id="topBtn" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button><script>
+'use strict';
+// EDITE AQUI o código distribuído ao público.
+// Barreira de experiência apenas: NÃO é segurança real. Código e respostas
+// são visíveis no navegador. Não coloque segredos ou dados privados aqui.
+const QUIZ_ACCESS_CODE = 'COGITO2026';
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.getElementById('sidebar');
+const sidebarClose = document.getElementById('sidebarClose');
+const overlay = document.getElementById('sidebarOverlay');
+const main = document.querySelector('main');
+const footer = document.querySelector('footer');
+const topBtn = document.getElementById('topBtn');
+function abrirMenu() {
+  sidebar.inert = false;
+  sidebar.classList.add('open'); overlay.classList.add('active');
+  menuToggle.classList.remove('hidden'); menuToggle.setAttribute('aria-expanded','true');
+  document.body.classList.add('menu-open');
+  main.inert = footer.inert = topBtn.inert = true;
+  sidebarClose.focus();
+}
+function fecharMenu(restore = true) {
+  sidebar.classList.remove('open'); overlay.classList.remove('active');
+  menuToggle.setAttribute('aria-expanded','false');
+  document.body.classList.remove('menu-open');
+  main.inert = footer.inert = topBtn.inert = false;
+  if (restore) menuToggle.focus({preventScroll:true});
+  sidebar.inert = true;
+}
+menuToggle.addEventListener('click',abrirMenu);
+sidebarClose.addEventListener('click',()=>fecharMenu());
+overlay.addEventListener('click',()=>fecharMenu());
+document.addEventListener('keydown',e=>{
+  if (!sidebar.classList.contains('open')) return;
+  if(e.key==='Escape') fecharMenu();
+  if(e.key==='Tab') {
+    const els = [...sidebar.querySelectorAll('button,a')];
+    const first=els[0],last=els[els.length-1];
+    if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+  }
+});
+sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+  fecharMenu(false);
+  const target=document.querySelector(link.getAttribute('href'));
+  target.setAttribute('tabindex','-1');target.focus({preventScroll:true});
+}));
 let ultimaPosicaoScroll = window.scrollY;
-
-window.addEventListener('scroll', function() {
-
-    const posicaoAtual = window.scrollY;
-
-    if (posicaoAtual > ultimaPosicaoScroll && posicaoAtual > 80) {
-
-        // Usuário está descendo
-        menuToggle.classList.add('hidden');
-
-    } else {
-
-        // Usuário está subindo
-        menuToggle.classList.remove('hidden');
-
-    }
-
-    ultimaPosicaoScroll = posicaoAtual;
-
+window.addEventListener('scroll',()=>{
+  const atual=Math.max(0,window.scrollY);
+  if(!sidebar.classList.contains('open')) menuToggle.classList.toggle('hidden',atual>ultimaPosicaoScroll && atual>80);
+  ultimaPosicaoScroll=atual;
+  topBtn.style.display=atual>300?'block':'none';
+},{passive:true});
+menuToggle.addEventListener('focus',()=>menuToggle.classList.remove('hidden'));
+topBtn.addEventListener('click',()=>{
+  document.getElementById('home').focus({preventScroll:true});
+  window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+});
+const questions = [
+  {q:'Uma mensagem urgente pede sua senha por um link. O que fazer?',a:['Abrir e preencher para evitar o bloqueio.','Verificar pelo aplicativo ou canal oficial, sem usar o link recebido.','Encaminhar o link para todos os contatos.'],correct:1,why:'Urgência pode ser uma técnica de engenharia social. Confirme a solicitação por um canal conhecido.'},
+  {q:'Qual hábito ajuda a proteger suas contas?',a:['Reutilizar uma senha em todos os serviços.','Usar somente sua data de nascimento.','Usar senhas únicas e ativar a autenticação em dois fatores.'],correct:2,why:'Senhas únicas limitam o impacto de vazamentos. Um segundo fator acrescenta proteção à conta.'},
+  {q:'O cadeado e o HTTPS garantem que uma página é confiável?',a:['Não. Indicam uma conexão criptografada, mas páginas falsas também podem usá-los.','Sim, qualquer página com cadeado é legítima.','Sim, desde que a página tenha um logotipo conhecido.'],correct:0,why:'Confira o endereço e o contexto. Uma conexão criptografada não comprova a legitimidade do site.'},
+  {q:'Alguém pede o código de verificação que chegou ao seu celular. Como agir?',a:['Enviar se a pessoa disser que é do suporte.','Não compartilhar e confirmar a situação pelo canal oficial.','Publicar o código para perguntar se é verdadeiro.'],correct:1,why:'Códigos de verificação podem liberar acesso à sua conta. Não os entregue a quem entra em contato pedindo esse dado.'},
+  {q:'Onde devem acontecer demonstrações de ferramentas de rede?',a:['Em qualquer rede próxima.','Em dispositivos de colegas sem avisar.','Em um ambiente controlado, com autorização e escopo definido.'],correct:2,why:'Demonstrações educativas precisam respeitar a autorização, os limites do ambiente e a privacidade.'}
+];
+const unlockForm=document.getElementById('unlockForm');
+const content=document.getElementById('quizContent');
+const quizForm=document.getElementById('quizForm');
+const result=document.getElementById('quizResult');
+const unlockStatus=document.getElementById('unlockStatus');
+let unlocked=false;
+const questionBox=document.getElementById('questions');
+questions.forEach((item,i)=>{
+  const field=document.createElement('fieldset');
+  const legend=document.createElement('legend');legend.textContent=`${i+1}. ${item.q}`;field.append(legend);
+  item.a.forEach((answer,j)=>{
+    const label=document.createElement('label');label.className='answer';
+    const radio=document.createElement('input');radio.type='radio';radio.name=`q${i}`;radio.value=j;radio.required=true;
+    const text=document.createElement('span');text.textContent=answer;label.append(radio,text);field.append(label);
+  });
+  const feedback=document.createElement('p');feedback.className='feedback';feedback.id=`feedback${i}`;feedback.hidden=true;field.append(feedback);questionBox.append(field);
+});
+function setState(label){document.getElementById('quizState').textContent=label;document.querySelector('.menu-lock').textContent=label;}
+function resetAnswers(){quizForm.reset();result.textContent='';document.querySelectorAll('.feedback').forEach(el=>{el.hidden=true;el.textContent='';});}
+unlockForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(document.getElementById('accessCode').value.trim().toUpperCase()!==QUIZ_ACCESS_CODE.toUpperCase()){
+    unlockStatus.textContent='Código incorreto. Confira com a equipe e tente novamente.';return;
+  }
+  unlocked=true;unlockForm.hidden=true;content.hidden=false;unlockStatus.textContent='';setState('[UNLOCKED]');document.getElementById('quizHeading').focus();
+});
+quizForm.addEventListener('submit',e=>{
+  e.preventDefault();if(!unlocked)return;
+  const data=new FormData(quizForm);let score=0;
+  questions.forEach((item,i)=>{
+    const correct=Number(data.get(`q${i}`))===item.correct;if(correct)score++;
+    const feedback=document.getElementById(`feedback${i}`);feedback.hidden=false;
+    feedback.textContent=(correct?'✓ Correto. ':'↳ Revise: '+item.a[item.correct]+' ')+item.why;
+  });
+  result.textContent=`Você acertou ${score} de ${questions.length}. Confira as explicações de cada resposta e leve esses cuidados para o dia a dia.`;result.focus();
+});
+document.getElementById('resetQuiz').addEventListener('click',()=>{resetAnswers();quizForm.querySelector('input').focus();});
+document.getElementById('lockQuiz').addEventListener('click',()=>{
+  unlocked=false;resetAnswers();content.hidden=true;unlockForm.hidden=false;unlockForm.reset();setState('[LOCKED]');document.getElementById('accessCode').focus();
 });
 
-        sidebarClose.addEventListener(
-            'click',
-            fecharMenu
-        );
-
-
-        sidebarOverlay.addEventListener(
-            'click',
-            fecharMenu
-        );
-
-
-        /* ==================================================
-           FECHAR MENU COM ESC
-           ================================================== */
-
-        document.addEventListener(
-            'keydown',
-            function(event) {
-
-                if (event.key === 'Escape') {
-
-                    fecharMenu();
-
-                }
-
-            }
-        );
-
-
-        /* ==================================================
-           FECHAR MENU AO CLICAR EM UM LINK
-           ================================================== */
-
-        const sidebarLinks =
-            document.querySelectorAll(
-                '.sidebar-nav a'
-            );
-
-
-        sidebarLinks.forEach(
-            function(link) {
-
-                link.addEventListener(
-                    'click',
-                    fecharMenu
-                );
-
-            }
-        );
-
-
-        /* ==================================================
-           BOTÃO VOLTAR AO TOPO
-           ================================================== */
-
-        const topBtn =
-            document.getElementById('topBtn');
-
-
-        window.addEventListener(
-            'scroll',
-            function() {
-
-                if (
-                    document.body.scrollTop > 300 ||
-                    document.documentElement.scrollTop > 300
-                ) {
-
-                    topBtn.style.display = 'block';
-
-                }
-
-                else {
-
-                    topBtn.style.display = 'none';
-
-                }
-
-            }
-        );
-
-
-        topBtn.addEventListener(
-            'click',
-            function() {
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-
-            }
-        );
-
-
-        /* ==================================================
-           ARRASTAR CARDS COM O MOUSE
-           ================================================== */
-
-        const containers =
-            document.querySelectorAll(
-                '.cards-container'
-            );
-
-
-        containers.forEach(
-            function(container) {
-
-                let isDown = false;
-
-                let startX;
-
-                let scrollLeft;
-
-
-                container.addEventListener(
-                    'mousedown',
-                    function(event) {
-
-                        isDown = true;
-
-                        container.style.cursor =
-                            'grabbing';
-
-                        startX =
-                            event.pageX -
-                            container.offsetLeft;
-
-                        scrollLeft =
-                            container.scrollLeft;
-
-                    }
-                );
-
-
-                container.addEventListener(
-                    'mouseleave',
-                    function() {
-
-                        isDown = false;
-
-                        container.style.cursor =
-                            'grab';
-
-                    }
-                );
-
-
-                container.addEventListener(
-                    'mouseup',
-                    function() {
-
-                        isDown = false;
-
-                        container.style.cursor =
-                            'grab';
-
-                    }
-                );
-
-
-                container.addEventListener(
-                    'mousemove',
-                    function(event) {
-
-                        if (!isDown) {
-                            return;
-                        }
-
-                        event.preventDefault();
-
-                        const x =
-                            event.pageX -
-                            container.offsetLeft;
-
-                        const walk =
-                            (x - startX) * 1.5;
-
-                        container.scrollLeft =
-                            scrollLeft - walk;
-
-                    }
-                );
-
-            }
-        );
-
-
-        /* ==================================================
-           CONSOLE COGITO
-           ================================================== */
-
-        console.log(
-            "%c[COGITO ERGO SUM] %cV2 Beta inicializada.",
-            "color: #00ff00; font-size: 14px;",
-            "color: #ffcc00;"
-        );
-
-
-        console.log(
-            "%c[SILENT BREACH] %cSCCT 2026",
-            "color: #00ff00;",
-            "color: #ccc;"
-        );
-
-
-    </script>
-
-
-</body>
-
-</html>
+</script></body></html>
