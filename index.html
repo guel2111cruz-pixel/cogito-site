@@ -1622,13 +1622,37 @@
             );
 
         }
+		
+		menuToggle.addEventListener(
+    'click',
+    abrirMenu
+);
+		
+/* ==================================================
+   ESCONDER MENU AO ROLAR PARA BAIXO
+   ================================================== */
 
+let ultimaPosicaoScroll = window.scrollY;
 
-        menuToggle.addEventListener(
-            'click',
-            abrirMenu
-        );
+window.addEventListener('scroll', function() {
 
+    const posicaoAtual = window.scrollY;
+
+    if (posicaoAtual > ultimaPosicaoScroll && posicaoAtual > 80) {
+
+        // Usuário está descendo
+        menuToggle.classList.add('hidden');
+
+    } else {
+
+        // Usuário está subindo
+        menuToggle.classList.remove('hidden');
+
+    }
+
+    ultimaPosicaoScroll = posicaoAtual;
+
+});
 
         sidebarClose.addEventListener(
             'click',
