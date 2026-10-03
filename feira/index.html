@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080e08"><title>Silent Breach // SCCT</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="app.css"><script src="app.js" defer></script></head>
+<body><main>
+<header><p class="tag">COGITO, ERGO SUM // SCCT</p><h1>SILENT BREACH</h1><p>Uma escolha pequena. Uma conversa sobre segurança.</p></header>
+<p id="cache" role="status">Preparando disponibilidade offline…</p>
+<section id="choose"><h2>Escolha em particular</h2><p>Toque em uma senha fictícia para a rede da demonstração. Não use nenhuma senha pessoal. Depois do toque, a escolha fica oculta.</p><div id="options" class="grid"></div></section>
+<section id="waiting" hidden><h2>Escolha oculta</h2><p>Devolva o tablet à equipe. A confirmação da placa será acompanhada pelo operador.</p></section>
+<p id="status" role="status" aria-live="polite">Aguardando escolha.</p>
+<details id="operator"><summary>Área da equipe</summary><p>O código da equipe autoriza o controle. As senhas acima são apenas exemplos educativos, sem promessa de sigilo contra inspeção técnica do tablet.</p>
+<label>Código de controle <input id="token" type="password" autocomplete="off" spellcheck="false"></label><button id="unlock">Autorizar esta sessão</button>
+<div id="controls" hidden><button id="send">Aplicar / verificar escolha</button><button id="cancel">Descartar escolha local</button><button id="next">Preparar próximo participante</button><button id="lock">Encerrar sessão</button></div>
+<p>Sem conexão, a escolha permanece no tablet. Reconecte à rede da equipe e toque em aplicar/verificar. Uma falha de comunicação não significa que a placa não mudou a senha.</p></details>
+<footer>Laboratório próprio • demonstração educativa • V2 Beta</footer>
+</main></body></html>
