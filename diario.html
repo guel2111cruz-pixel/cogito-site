@@ -946,6 +946,28 @@ footer p+p{margin-top:.8rem}body.menu-open{overflow:hidden}.ascii{max-width:100%
 
 /* Registros do diário: edite os artigos log-entry para adicionar conteúdo. */
 .log-entry h2{font-size:clamp(1.1rem,3vw,1.55rem);color:#e6ffe6;overflow-wrap:anywhere}.log-meta{color:#a8b5a8;font-size:.8rem;margin:1rem 0;line-height:1.8}.log-line{position:relative;padding-left:1.3rem;max-width:950px}.log-line::before{content:">";position:absolute;left:0;color:#00ff00}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.2rem;margin-top:1.5rem}.gallery figure{min-width:0;margin:0}.gallery img,.gallery video{display:block;width:100%;height:320px;object-fit:contain;background:#030603;border:1px solid #244524;border-radius:8px}.gallery img:hover{border-color:#ffcc00}figcaption{font-size:.75rem;color:#afbbaf;padding:.7rem 0;line-height:1.6}.source{font-size:.8rem}#arquivo h3{margin-bottom:1rem}@media(max-width:500px){.gallery img,.gallery video{height:280px}}
+
+/* Documentação técnica: estilos isolados para preservar o Diário. */
+.doc-open,.doc-close,.doc-nav a{font:inherit;color:#00ff00;background:#081108;border:1px solid #386238;border-radius:6px;padding:.7rem 1rem;cursor:pointer;display:inline-block;text-decoration:none;overflow-wrap:anywhere}
+.doc-open:hover,.doc-close:hover,.doc-nav a:hover{border-color:#ffcc00;color:#ffcc00}
+.doc-open:focus-visible,.doc-close:focus-visible,.doc-nav a:focus-visible,.doc-code summary:focus-visible,.doc-pre:focus-visible,.doc-code pre:focus-visible{outline:3px solid #ffcc00;outline-offset:3px}
+body.docs-open{overflow:hidden}
+#technical-docs{position:fixed;inset:0;margin:auto;width:min(1000px,calc(100% - 2rem));height:min(860px,calc(100dvh - 2rem));max-height:calc(100dvh - 2rem);max-width:calc(100% - 2rem);padding:0;color:#e0e0e0;background:#080e08;border:1px solid #00ff00;border-radius:12px;box-shadow:0 0 35px #00ff0026;overflow:hidden}
+#technical-docs::backdrop{background:#000c;backdrop-filter:blur(3px)}
+.doc-shell{display:flex;flex-direction:column;height:100%;min-height:0}
+.doc-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem;border-bottom:1px solid #244524;flex-shrink:0;background:#050a05}
+.doc-header h2{font-size:clamp(1rem,3vw,1.4rem);color:#00ff00;overflow-wrap:anywhere}
+.doc-close{flex-shrink:0;min-height:44px}
+.doc-scroll{overflow:auto;overscroll-behavior:contain;padding:clamp(1rem,4vw,2rem);min-height:0}
+.doc-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 2rem}
+.doc-section{margin:0 0 2rem;padding-top:1rem;border-top:1px solid #244524;animation:none;scroll-margin-top:1rem;overflow-wrap:anywhere}
+.doc-section h3{color:#ffcc00;font-size:1.15rem;margin-bottom:1rem}.doc-section h4{color:#00ff00;margin:1.2rem 0 .5rem}
+.doc-section p+p{margin-top:.8rem}.doc-section ul,.doc-section ol{padding-left:1.5rem;margin:.8rem 0}.doc-section li+li{margin-top:.5rem}
+.doc-section code{overflow-wrap:anywhere}.doc-pre,.doc-code pre{max-width:100%;overflow:auto;white-space:pre;background:#020602;border:1px solid #244524;border-radius:6px;padding:1rem;font-size:.85rem;margin:.8rem 0;line-height:1.6}.doc-pre code,.doc-code pre code{overflow-wrap:normal}
+.doc-code{margin:1rem 0}.doc-code summary{cursor:pointer;padding:.8rem;background:#122012;color:#ffcc00;border-radius:6px}
+.doc-note{border-left:3px solid #ffcc00;padding:.7rem 1rem;color:#c7d0c7;background:#ffcc0008}
+@media(max-width:500px){#technical-docs{width:calc(100% - 1rem);max-width:calc(100% - 1rem);height:calc(100dvh - 1rem);max-height:calc(100dvh - 1rem)}.doc-header{padding:.8rem;gap:.5rem}.doc-close{padding:.6rem}.doc-nav a{flex:1 1 130px;font-size:.85rem}}
+
 </style>
 </head><body>
 <a class="skip" href="#home">Pular para o conteúdo</a>
@@ -954,7 +976,27 @@ footer p+p{margin-top:.8rem}body.menu-open{overflow:hidden}.ascii{max-width:100%
 <aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-label="Menu principal" inert>
 <div class="sidebar-header"><span>COGITO // MENU</span><button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">×</button></div>
 <nav class="sidebar-nav" aria-label="Seções"><a href="index.html#home">&gt; Início</a><a href="index.html#silent-breach">&gt; Silent Breach</a><a href="projetos.html">&gt; Projetos COGITO</a><a href="#home" aria-current="page">&gt; Diário de Bordo</a><a href="index.html#equipe">&gt; Equipe</a><a href="index.html#quiz">&gt; Quiz <span class="menu-lock">[LOCKED]</span></a><a href="index.html#contato">&gt; Contato</a></nav><div class="sidebar-footer">COGITO ERGO SUM<br><span>V2 Beta // PENSAR. CRIAR. COMPARTILHAR.</span></div></aside>
-<main id="main-content"><section id="home" tabindex="-1" aria-labelledby="diary-title"><div class="hero"><p class="eyebrow">COGITO ERGO SUM // REGISTROS DO PROCESSO</p><h1 id="diary-title">DIÁRIO DE BORDO</h1><p class="subtitle">Da curiosidade à construção.</p><p class="description">Memórias, decisões e bastidores do Silent Breach, registrados por Miguel (GL).</p><div class="buttons"><a class="btn green" href="index.html">← VOLTAR AO SITE</a><a class="btn yellow" href="#arquivo">FOTOS E VÍDEOS</a></div></div><p class="log-meta">&gt; 16 registros // ordem de registro decrescente<br>&gt; Períodos aproximados estão indicados nos logs.</p><div class="terminal"><h2>Verificação dos registros</h2><p>Os comandos e filtros dos LOG_015 e LOG_016 foram conferidos com a documentação oficial. Os resultados são relatos de Miguel; a verificação independente dos experimentos aguarda as saídas do Nmap e a captura do Wireshark. Não há evidência anexada que comprove uma invasão.</p></div><article class="terminal log-entry" id="log-016">
+<main id="main-content"><section id="home" tabindex="-1" aria-labelledby="diary-title"><div class="hero"><p class="eyebrow">COGITO ERGO SUM // REGISTROS DO PROCESSO</p><h1 id="diary-title">DIÁRIO DE BORDO</h1><p class="subtitle">Da curiosidade à construção.</p><p class="description">Memórias, decisões e bastidores do Silent Breach, registrados por Miguel (GL).</p><div class="buttons"><a class="btn green" href="index.html">← VOLTAR AO SITE</a><a class="btn yellow" href="#arquivo">FOTOS E VÍDEOS</a><button class="btn green" type="button" data-doc="overview" aria-haspopup="dialog" aria-controls="technical-docs">DOCUMENTAÇÃO TÉCNICA</button></div></div><p class="log-meta">&gt; 21 registros // ordem de registro decrescente<br>&gt; Períodos aproximados estão indicados nos logs.</p><div class="terminal"><h2>Verificação dos registros</h2><p>Os comandos e filtros dos LOG_015 e LOG_016 foram conferidos com a documentação oficial. Os resultados são relatos de Miguel; a verificação independente dos experimentos aguarda as saídas do Nmap e a captura do Wireshark. Não há evidência anexada que comprove uma invasão.</p></div><article class="terminal log-entry" id="log-021">
+<p class="eyebrow">[LOG_021]</p><h2>INTEGRAÇÃO E TESTES FINAIS // SILENT BREACH</h2>
+<p class="log-meta">PERÍODO: Início de outubro de 2026<br>RELATO: Miguel (GL) e desenvolvimento do projeto</p>
+<p class="log-line">Concluímos a integração do site, App SCCT, autorização da equipe, bridge local e ESP32-CAM para a experiência da feira. O fluxo chegou à troca real da senha do AP e foi validado com a conexão de um segundo aparelho.</p><p class="log-line">A documentação de Nmap e Wireshark permanece nos LOG_015 e LOG_016. Organizamos também os componentes do App e do controle em uma subjanela de documentação técnica, mantendo os códigos fora da leitura principal do Diário.</p><p class="log-line">O teste físico confirmado nesta reta final usou a senha fictícia <code>password</code>. Os ensaios de todas as opções, interrupção de USB, recuperação após reinício e streaming durante a troca continuam identificados na documentação como verificações a realizar ou sem resultado registrado.</p><p><button class="doc-open" type="button" data-doc="overview" aria-haspopup="dialog" aria-controls="technical-docs">[ VER DOCUMENTAÇÃO TÉCNICA ]</button></p></article>
+<article class="terminal log-entry" id="log-020">
+<p class="eyebrow">[LOG_020]</p><h2>PREPARAR PRÓXIMO PARTICIPANTE // CICLO DA EXPERIÊNCIA</h2>
+<p class="log-meta">PERÍODO: Início de outubro de 2026<br>RELATO: Miguel (GL) e desenvolvimento do projeto</p>
+<p class="log-line">Implementamos na Área da Equipe o botão “Preparar próximo participante”. Depois de uma rodada confirmada, ele limpa a escolha local, apresenta novamente as quatro opções e fecha a área do operador, mantendo a autorização da sessão em memória.</p><p class="log-line">Esse preparo não restaura a senha inicial da ESP32-CAM: o AP mantém a última senha aplicada até uma nova escolha. Encerrar a sessão é uma ação separada.</p><p class="log-line">O ciclo organizado ficou: autorizar a equipe → participante escolhe → aplicar/verificar quando necessário → aguardar confirmação → demonstrar a conexão → preparar o próximo participante. Com a sessão já autorizada, a escolha inicia o envio automaticamente; se houver falha, verificamos a mesma rodada.</p><p><button class="doc-open" type="button" data-doc="app" aria-haspopup="dialog" aria-controls="technical-docs">[ VER DOCUMENTAÇÃO TÉCNICA ]</button></p></article>
+<article class="terminal log-entry" id="log-019">
+<p class="eyebrow">[LOG_019]</p><h2>ESP32-CAM // APPLIED E VALIDAÇÃO FÍSICA</h2>
+<p class="log-meta">PERÍODO: Início de outubro de 2026<br>RELATO: Miguel (GL) e desenvolvimento do projeto</p>
+<p class="log-line">Integramos o controle USB/serial à ESP32-CAM para trocar a senha do AP <code>SILENT_BREACH</code> entre as quatro opções fictícias do App: <code>12345678</code>, <code>password</code>, <code>qwerty12</code> e <code>cogito26</code>.</p><p class="log-line">O firmware recebe a escolha, reconfigura o ponto de acesso e registra a rodada. A bridge só considera a aplicação confirmada ao receber <code>APPLIED</code> com o identificador correspondente; o App então apresenta a confirmação.</p><p class="log-line">No teste físico relatado por Miguel, um segundo dispositivo conseguiu conectar ao AP usando <code>password</code>, a senha escolhida. Isso validou a associação externa naquela rodada, além da confirmação serial. Não estendemos esse resultado às demais opções sem um registro equivalente.</p><p><button class="doc-open" type="button" data-doc="firmware" aria-haspopup="dialog" aria-controls="technical-docs">[ VER DOCUMENTAÇÃO TÉCNICA ]</button></p></article>
+<article class="terminal log-entry" id="log-018">
+<p class="eyebrow">[LOG_018]</p><h2>BRIDGE LOCAL // HTTPS, SQLITE E SERIAL USB</h2>
+<p class="log-meta">PERÍODO: Início de outubro de 2026<br>RELATO: Miguel (GL) e desenvolvimento do projeto</p>
+<p class="log-line">Desenvolvemos uma ponte em Python executada no notebook/PLOT. O tablet comunica-se com ela por HTTPS na rede da equipe; a ponte encaminha a escolha à ESP32-CAM por USB/serial, a 115200 baud.</p><p class="log-line">As solicitações são registradas em SQLite antes do envio ao hardware. O identificador permite verificar novamente a mesma rodada sem criar outra escolha; um resultado incerto bloqueia uma rodada diferente até sua resolução.</p><p class="log-line">A autorização do navegador e a autenticação do comando serial usam chaves distintas. O controle não depende de um endpoint HTTP no AP demonstrativo da placa. O App e o notebook ficam na rede da equipe, separada do AP cuja senha muda.</p><p><button class="doc-open" type="button" data-doc="bridge" aria-haspopup="dialog" aria-controls="technical-docs">[ VER DOCUMENTAÇÃO TÉCNICA ]</button></p></article>
+<article class="terminal log-entry" id="log-017">
+<p class="eyebrow">[LOG_017]</p><h2>APP SCCT NO TABLET // PWA E ÁREA DA EQUIPE</h2>
+<p class="log-meta">PERÍODO: Início de outubro de 2026<br>RELATO: Miguel (GL) e desenvolvimento do projeto</p>
+<p class="log-line">Desenvolvemos o App SCCT para o tablet com quatro escolhas de senha fictícia e uma Área da Equipe para autorizar a sessão e acompanhar a aplicação. A validação integrada chegou à escolha no tablet e à troca de senha confirmada na placa.</p><p class="log-line">A interface guarda a rodada localmente e oculta as opções após a escolha. A autorização permanece apenas em memória; fechar a Área da Equipe não encerra a sessão, e o botão de encerrar sessão remove essa autorização.</p><p class="log-line">O App possui manifesto e service worker para preparar a interface offline após o carregamento em contexto seguro. A interface offline pode guardar a escolha, mas o controle real exige comunicação com a bridge local. O ensaio específico de reabertura offline não tem resultado registrado no material disponível.</p><p><button class="doc-open" type="button" data-doc="app" aria-haspopup="dialog" aria-controls="technical-docs">[ VER DOCUMENTAÇÃO TÉCNICA ]</button></p></article>
+<article class="terminal log-entry" id="log-016">
 <p class="eyebrow">[LOG_016]</p>
 <h2>TESTE COM WIRESHARK // OBSERVAÇÃO DE UMA REQUISIÇÃO HTTP</h2>
 <p class="log-meta">PERÍODO: 01/10/2026<br>RELATO: Miguel (GL)<br>AMBIENTE: PLOT e A15 com Termux</p>
@@ -982,6 +1024,101 @@ footer p+p{margin-top:.8rem}body.menu-open{overflow:hidden}.ascii{max-width:100%
 <article class="terminal log-entry" id="log-014"><p class="eyebrow">[LOG_014]</p><h2>SOLICITAÇÕES PARA O PROJETO</h2><p class="log-meta">PERÍODO: 18/09/2026<br>AUTORIA: Miguel (GL)</p><p class="log-line">Fizemos as solicitações do que precisaríamos para realizar o projeto.</p></article><article class="terminal log-entry" id="log-013"><p class="eyebrow">[LOG_013]</p><h2>PLANEJAMENTO DOS BRINDES</h2><p class="log-meta">PERÍODO: 09/09/2026<br>AUTORIA: Miguel (GL)</p><p class="log-line">Decidimos incluir brindes na experiência do projeto.</p><p class="log-line">Combinamos uma contribuição de R$ 35 por pessoa. Eu contribuiria com R$ 70 para aliviar o valor necessário para os demais integrantes.</p></article><article class="terminal log-entry" id="log-012"><p class="eyebrow">[LOG_012]</p><h2>APRESENTAÇÃO PARA A TURMA</h2><p class="log-meta">PERÍODO: 19/08/2026<br>AUTORIA: Miguel (GL)</p><p class="log-line">Apresentamos o projeto à turma como parte de um trabalho solicitado pela professora.</p><p class="log-line">Como o tempo disponível era curto, não apresentamos a palestra completa. Na minha percepção, houve pouco envolvimento do público durante a apresentação.</p></article><article class="terminal log-entry" id="log-011"><p class="eyebrow">[LOG_011]</p><h2>TAGS E ADESIVOS</h2><p class="log-meta">PERÍODO: 15/07/2026<br>AUTORIA: Miguel (GL)</p><p class="log-line">Pedi que cada integrante criasse ou escolhesse uma tag para que eu pudesse preparar adesivos personalizados.</p><p class="log-line">Os adesivos fariam parte de uma competição interna que eu estava planejando. Naquele momento, os demais integrantes ainda não sabiam da competição.</p></article><article class="terminal log-entry" id="log-010"><p class="eyebrow">[LOG_010]</p><h2>DESMONTAGEM E MONTAGEM PROVISÓRIA</h2><p class="log-meta">PERÍODO: 14/07/2026<br>AUTORIA: Miguel (GL)</p><p class="log-line">Peguei o notebook com Felipe e, assim que cheguei em casa, comecei a desmontar sua carcaça e acomodar o equipamento na maleta.</p><p class="log-line">Registrei o processo em vídeos e fotos, desde a desmontagem até a disposição dos componentes.</p><p class="log-line">Essa primeira montagem era temporária. No mesmo dia, registrei o notebook funcionando com Kali Linux dentro da maleta.</p><div class="gallery"><figure><a href="midia/desmontagem.jpeg" target="_blank" rel="noopener"><img src="midia/desmontagem.jpeg" loading="lazy" alt="Desmontagem da carcaça do notebook — 14/07/2026."></a><figcaption>Desmontagem da carcaça do notebook — 14/07/2026.</figcaption></figure><figure><a href="midia/componentes.jpeg" target="_blank" rel="noopener"><img src="midia/componentes.jpeg" loading="lazy" alt="Disposição provisória dos componentes na maleta — 14/07/2026."></a><figcaption>Disposição provisória dos componentes na maleta — 14/07/2026.</figcaption></figure><figure><a href="midia/kali.jpeg" target="_blank" rel="noopener"><img src="midia/kali.jpeg" loading="lazy" alt="Notebook funcionando com Kali Linux na montagem provisória — 14/07/2026."></a><figcaption>Notebook funcionando com Kali Linux na montagem provisória — 14/07/2026.</figcaption></figure></div></article><article class="terminal log-entry" id="log-009"><p class="eyebrow">[LOG_009]</p><h2>CHEGADA DOS PRIMEIROS MATERIAIS</h2><p class="log-meta">PERÍODO: 13/07/2026<br>AUTORIA: Miguel (GL)</p><p class="log-line">Alguns dos itens comprados chegaram. Filmei a abertura das embalagens para compartilhar com o grupo do projeto.</p><p class="log-line">Também tirei fotos de como o conjunto poderia ficar dentro da maleta, ainda usando o tablet para visualizar a proposta inicial.</p><div class="gallery"><figure><a href="midia/tablet.jpeg" target="_blank" rel="noopener"><img src="midia/tablet.jpeg" loading="lazy" alt="Proposta inicial com tablet na maleta — 13/07/2026."></a><figcaption>Proposta inicial com tablet na maleta — 13/07/2026.</figcaption></figure></div></article><article class="terminal log-entry" id="log-008"><p class="eyebrow">[LOG_008]</p><h2>MUDANÇA NA BASE DO CYBERDECK</h2><p class="log-meta">PERÍODO: 10/07/2026<br>AUTORIA: Miguel (GL)</p><p class="log-line">A proposta inicial era montar o CyberDeck usando uma maleta e meu tablet.</p><p class="log-line">Felipe sugeriu aproveitar um notebook antigo que tinha guardado e que ninguém utilizava. Essa alternativa abriu caminho para mudar a base do equipamento e reaproveitar o que já tínhamos disponível.</p></article><article class="terminal log-entry" id="log-007"><p class="eyebrow">[LOG_007]</p><h2>ORIENTAÇÃO DO PROJETO</h2><p class="log-meta">PERÍODO: Após a formação da equipe • data não registrada<br>AUTORIA: Miguel (GL)</p><p class="log-line">Começamos a procurar alguém para orientar o projeto, mas não conhecíamos professores da área de informática.</p><p class="log-line">A professora Ingrid decidiu nos apoiar, mesmo sem ter tanta familiaridade com o tema. Com sua participação, passamos a contar com uma orientadora para acompanhar o desenvolvimento do projeto.</p></article><article class="terminal log-entry" id="log-006"><p class="eyebrow">[LOG_006]</p><h2>LEVANTAMENTO INICIAL DE CUSTOS</h2><p class="log-meta">PERÍODO: Após a formação da equipe • antes da orientação<br>AUTORIA: Miguel (GL)</p><p class="log-line">Fizemos um levantamento geral dos materiais e preços. A estimativa inicial ficou em R$ 75 por integrante.</p><p class="log-line">Ao longo das compras, registramos: hub USB — R$ 38,78; roteador — R$ 169,00; maleta — R$ 130,85. Subtotal: R$ 338,63.</p><p class="log-line">Nem todos os gastos foram repassados à equipe. Também comprei com meu próprio dinheiro: mini teclado USB — R$ 47,14; mouse Bluetooth — R$ 43,70; espuma para a maleta — R$ 29,00. Subtotal das compras pessoais: R$ 119,84.</p><p class="log-line">O total dos itens listados foi de R$ 458,47. Esse valor representa as compras registradas, não o valor efetivamente dividido entre os integrantes.</p></article><article class="terminal log-entry" id="log-005"><p class="eyebrow">[LOG_005]</p><h2>FORMAÇÃO DA EQUIPE COGITO</h2><p class="log-meta">PERÍODO: 02/06/2026<br>AUTORIA: Miguel (GL)</p><p class="log-line">Ao descobrirmos que a categoria de competição da feira teria equipes de apenas cinco integrantes, precisamos repensar nossa organização. Antes disso, planejávamos desenvolver outro projeto com um grupo maior.</p><p class="log-line">Em 2 de junho, organizei o grupo que se tornaria a atual equipe COGITO. Apresentei a proposta do projeto e expliquei sua finalidade aos integrantes, dando início a essa nova direção.</p></article><article class="terminal log-entry" id="log-004"><p class="eyebrow">[LOG_004]</p><h2>ACESSO AO CONHECIMENTO</h2><p class="log-meta">PERÍODO: 2026 • data não registrada<br>AUTORIA: Miguel (GL)</p><p class="log-line">Durante minhas pesquisas, encontrei uma reportagem sobre um levantamento da Ford com o Datafolha: 98% das médias e grandes empresas consultadas relataram dificuldade para encontrar profissionais qualificados em tecnologia. Segurança da informação aparece entre as competências difíceis de encontrar.</p><p class="log-line">Nos meus estudos, também percebi barreiras para quem está começando: materiais em inglês e conteúdos extensos que podem tornar o aprendizado cansativo e pouco convidativo.</p><p class="log-line">Isso me levou a refletir sobre como apresentar esses assuntos de uma forma mais acessível e despertar a curiosidade de outras pessoas.</p><p class="source">REFERÊNCIA: <a href="https://forbes.com.br/carreira/2026/04/escassez-de-talentos-em-tecnologia-desafia-98-das-empresas-no-brasil/" target="_blank" rel="noopener">Forbes Brasil — 24/04/2026 ↗</a></p></article><article class="terminal log-entry" id="log-003"><p class="eyebrow">[LOG_003]</p><h2>PRIMEIRO EXPERIMENTO</h2><p class="log-meta">PERÍODO: 2026 • data não registrada<br>AUTORIA: Miguel (GL)</p><p class="log-line">Conheci o perfil @gio.yaml, que ensinava a montar um CyberDeck usando o celular e o Termux.</p><p class="log-line">Eu já tinha familiaridade com o Termux por causa dos estudos. Resolvi experimentar a proposta, e funcionou. A ideia que antes parecia distante ganhou uma possibilidade prática.</p></article><article class="terminal log-entry" id="log-002"><p class="eyebrow">[LOG_002]</p><h2>A IDEIA DE CONSTRUIR UM CYBERDECK</h2><p class="log-meta">PERÍODO: Início de 2025<br>AUTORIA: Miguel (GL)</p><p class="log-line">Os CyberDecks despertaram minha curiosidade e a vontade de construir um. O custo, porém, tornou essa ideia difícil de colocar em prática naquele momento.</p><p class="log-line">Nesse período, comecei a estudar hacking ético e redes.</p></article><article class="terminal log-entry" id="log-001"><p class="eyebrow">[LOG_001]</p><h2>ORIGEM DO INTERESSE</h2><p class="log-meta">PERÍODO: Há cerca de 2–3 anos<br>AUTORIA: Miguel (GL)</p><p class="log-line">Depois de assistir a Mr. Robot, comecei a me interessar por testes de invasão (pentest) e segurança ofensiva (OffSec). Foi o ponto de partida para explorar essa área.</p></article></section><section id="arquivo" aria-labelledby="archive-title"><h2 class="section-title" id="archive-title">ARQUIVO // REFERÊNCIA E VÍDEOS</h2><div class="terminal"><h3>Referência visual</h3><p>Imagem de inspiração compartilhada no grupo. Autoria original não informada; data do compartilhamento não registrada.</p><div class="gallery"><figure><a href="midia/referencia.jpeg" target="_blank" rel="noopener"><img src="midia/referencia.jpeg" loading="lazy" alt="Referência visual compartilhada com a equipe; não é uma montagem do COGITO."></a><figcaption>Referência visual compartilhada com a equipe; não é uma montagem do COGITO.</figcaption></figure></div></div><div class="terminal"><h3>Registros em vídeo // sem áudio</h3><p>Vídeos enviados para o acervo do projeto. A data individual de cada arquivo ainda não foi identificada.</p><div class="gallery"><figure><video controls muted playsinline preload="metadata" poster="midia/video-1.jpg" aria-label="Registro em vídeo 1, sem áudio"><source src="midia/video-1.mp4" type="video/mp4">Seu navegador não suporta vídeo. <a href="midia/video-1.mp4">Baixar vídeo</a></video><figcaption>Registro 01 // áudio removido</figcaption></figure><figure><video controls muted playsinline preload="metadata" poster="midia/video-2.jpg" aria-label="Registro em vídeo 2, sem áudio"><source src="midia/video-2.mp4" type="video/mp4">Seu navegador não suporta vídeo. <a href="midia/video-2.mp4">Baixar vídeo</a></video><figcaption>Registro 02 // áudio removido</figcaption></figure><figure><video controls muted playsinline preload="metadata" poster="midia/video-3.jpg" aria-label="Registro em vídeo 3, sem áudio"><source src="midia/video-3.mp4" type="video/mp4">Seu navegador não suporta vídeo. <a href="midia/video-3.mp4">Baixar vídeo</a></video><figcaption>Registro 03 // áudio removido</figcaption></figure></div></div></section></main>
 <footer><p>COGITO ERGO SUM // Diário de Bordo</p><p>© 2026 Equipe COGITO · <a href="index.html">Voltar ao site</a> · <a href="https://github.com/guel2111cruz-pixel/cogito-site" target="_blank" rel="noopener noreferrer">Repositório oficial ↗</a></p></footer>
 <button id="topBtn" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+<dialog id="technical-docs" aria-labelledby="docs-title" aria-describedby="docs-intro">
+<div class="doc-shell"><header class="doc-header"><h2 id="docs-title">DOCUMENTAÇÃO TÉCNICA // COGITO</h2><button class="doc-close" type="button" autofocus>FECHAR ×</button></header>
+<div class="doc-scroll"><p id="docs-intro">Componentes do Silent Breach, fluxo da experiência e registros de teste. Abra os trechos para consultar o código sem sair do Diário.</p>
+<nav class="doc-nav" aria-label="Componentes da documentação"><a href="#doc-overview">ARQUITETURA</a><a href="#doc-app">APP / PWA</a><a href="#doc-bridge">BRIDGE</a><a href="#doc-firmware">ESP32-CAM</a><a href="#doc-network">NMAP / WIRESHARK</a></nav>
+<section class="doc-section" id="doc-overview" tabindex="-1"><h3>01 // ARQUITETURA E EVIDÊNCIAS</h3>
+<pre class="doc-pre" tabindex="0" aria-label="Arquitetura do projeto">Tablet / App SCCT
+  │ Wi-Fi da equipe + HTTPS
+  ▼
+Notebook / PLOT
+  Bridge Python ── SQLite (rodadas)
+  │ USB / UART autenticado · 115200 baud
+  ▼
+AI Thinker ESP32-CAM
+  AP SILENT_BREACH ── segundo dispositivo
+  Câmera / página local / stream MJPEG
+
+Confirmação: ESP → APPLIED id → bridge → App</pre>
+<p>Tablet e notebook permanecem na rede da equipe. O segundo aparelho conecta ao AP demonstrativo, cuja senha muda; a troca desconecta seus clientes. A interface da feira e o enlace de controle não dependem de Internet.</p>
+<h4>Base consultada</h4><p>HTML original do Diário; projeto anteriormente entregue com <code>feira/</code>, <code>control/</code> e <code>INSTALACAO-SCCT.md</code>; relato da conversa com Miguel sobre a conexão bem-sucedida usando <code>password</code>. O pacote de referência contém comentários antigos de validação pendente; o relato posterior confirma o teste integrado dessa rodada.</p>
+<p class="doc-note">Os trechos abaixo são extraídos dos arquivos disponíveis. Não foi confirmada uma comparação integral entre esse pacote e a versão efetivamente gravada na placa. Credenciais reais não fazem parte desta documentação.</p>
+<h4>Testes e limites do registro</h4><ul><li>Confirmado no relato: escolha pelo App, fluxo de autorização/bridge/serial, troca de senha, confirmação e conexão física de um segundo aparelho com <code>password</code>.</li><li>Implementado no código: preparar próximo participante, persistência local/SQLite/Preferences, tratamento de estado incerto e interface offline.</li><li>Sem resultado específico registrado: as outras três senhas, reabertura offline, falha de USB, recuperação completa após reinício e continuidade do streaming durante a troca. Esses ensaios constam do roteiro do projeto; não são apresentados como concluídos.</li></ul></section>
+<section class="doc-section" id="doc-app" tabindex="-1"><h3>02 // APP SCCT / PWA</h3>
+<h4>Arquivos</h4><p><code>feira/index.html</code>, <code>feira/app.js</code>, <code>feira/app.css</code>, <code>feira/sw.js</code>, <code>feira/manifest.webmanifest</code> e ícones locais.</p>
+<h4>Funcionamento</h4><p>As quatro opções são <code>12345678</code>, <code>password</code>, <code>qwerty12</code> e <code>cogito26</code>. O toque cria um UUID e um índice de escolha (0–3); a rodada fica em <code>scct-pending</code> no localStorage. O App esconde as opções e aguarda confirmação. Se a sessão já estiver autorizada, tenta aplicar automaticamente.</p>
+<p>A Área da Equipe autoriza pela rota <code>GET /api/health</code>. O código de autorização permanece em memória, sem persistência no localStorage. A verificação de saúde confirma a bridge, sem verificar o hardware. A aplicação usa <code>POST /api/select</code> com <code>id</code> e <code>choice</code>.</p>
+<p>O service worker guarda o shell da interface em <code>scct-shell-v1</code>. Offline exige carregamento prévio em HTTPS confiável ou localhost. Guardar uma escolha offline não aplica a senha na placa; após reconectar, a equipe verifica a mesma rodada.</p>
+<h4>Próximo participante</h4><p>O botão só permite avançar quando não existe escolha ou quando seu estado é <code>applied</code>. Limpa a rodada local e fecha a área do operador. A autorização é mantida; a senha do AP não é restaurada. “Encerrar sessão” remove a autorização em memória.</p>
+<details class="doc-code"><summary>feira/app.js // aplicação e confirmação</summary><pre tabindex="0" aria-label="feira/app.js // aplicação e confirmação"><code>async function apply() {
+  if (!pending || !credential || busy || pending.state === &#x27;applied&#x27;) return;
+  busy = true; render(); message(&#x27;Aguardando aplicação e confirmação da placa…&#x27;);
+  try {
+    const result = await api(&#x27;/api/select&#x27;, {id:pending.id, choice:pending.choice});
+    if (result.id !== pending.id || result.state !== &#x27;applied&#x27;) throw new Error(&#x27;Resposta sem confirmação de aplicação.&#x27;);
+    pending.state = &#x27;applied&#x27;; save(); message(&#x27;Placa confirmou: senha aplicada. Clientes do AP precisam reconectar.&#x27;);
+  } catch (e) { message(`${e.message} Estado incerto: reconecte e toque em aplicar/verificar para consultar a mesma escolha.`); }
+  finally { busy = false; render(); }
+}</code></pre></details> <details class="doc-code"><summary>feira/app.js // preparar próximo participante</summary><pre tabindex="0" aria-label="feira/app.js // preparar próximo participante"><code>function clear() { pending = null; save(); render(); message(&#x27;Aguardando escolha.&#x27;); }
+$(&#x27;next&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { if (!pending || pending.state === &#x27;applied&#x27;) { clear(); $(&#x27;operator&#x27;).open = false; } });</code></pre></details>
+<h4>Testes</h4><p>A cadeia tablet → placa → segundo aparelho foi relatada como bem-sucedida com <code>password</code>. O teste de reabertura offline e a execução repetida do botão de próximo participante não possuem resultado específico documentado no relato disponível.</p></section>
+<section class="doc-section" id="doc-bridge" tabindex="-1"><h3>03 // BRIDGE PYTHON / SQLITE / HTTPS / SERIAL</h3>
+<h4>Arquivos e dependências</h4><p><code>control/bridge.py</code>, <code>control/requirements.txt</code> e <code>control/test_bridge.py</code>. Usa SQLite, ssl e servidor HTTP da biblioteca padrão, com pyserial para a porta USB.</p>
+<h4>Funcionamento</h4><p>Valida UUID, índice 0–3 e formato do pedido. Confere Host, Origin e autorização Bearer. O banco <code>jobs</code> mantém <code>id</code>, <code>choice</code> e <code>state</code>; registra <code>uncertain</code> antes de tocar o hardware. Uma rodada já aplicada retorna seu resultado; uma rodada incerta impede uma nova solicitação com outro identificador.</p>
+<p>A serial transmite <code>SET &lt;id&gt; &lt;choice&gt; &lt;chave omitida&gt;</code> seguido de nova linha. A bridge espera até 12 segundos por <code>APPLIED &lt;id&gt;</code>. Sem confirmação, a aplicação permanece incerta. A resposta aplicada é o registro daquela rodada, não uma leitura contínua do estado atual da placa.</p>
+<h4>Comandos relevantes</h4><p>Exemplos adaptados do guia do projeto. Substitua a porta, o IP e os caminhos pelos valores locais; configure <code>SCCT_TOKEN</code> e <code>SCCT_DEVICE_KEY</code> fora do HTML com valores distintos. Nenhum segredo está incluído.</p>
+<pre class="doc-pre" tabindex="0" aria-label="Comandos de instalação e inicialização"><code>python -m pip install -r control/requirements.txt
+python control/bridge.py --port COM5 --cert scct-cert.pem --key scct-key.pem --origin https://192.168.1.20:8443 --db scct-jobs.sqlite3
+# No Linux: substituir COM5 por /dev/ttyUSB0
+# Tablet: https://192.168.1.20:8443/feira/</code></pre>
+<p>Porta COM5 e IP acima são exemplos do guia, não valores confirmados do teste. O certificado precisa ser confiável no tablet e corresponder ao endereço utilizado. A ponte serve apenas os arquivos públicos da PWA; banco, firmware e segredos ficam fora dessas rotas.</p>
+<details class="doc-code"><summary>control/bridge.py // confirmar e persistir APPLIED</summary><pre tabindex="0" aria-label="control/bridge.py // confirmar e persistir APPLIED"><code>if line == f&quot;APPLIED {data[&#x27;id&#x27;]}&quot;:
+                        conn.execute(&quot;UPDATE jobs SET state=&#x27;applied&#x27; WHERE id=?&quot;, (data[&#x27;id&#x27;],))
+                        conn.commit()
+                        return {&#x27;id&#x27;:data[&#x27;id&#x27;], &#x27;state&#x27;:&#x27;applied&#x27;}</code></pre></details>
+<h4>Testes</h4><p>Funcionamento integrado confirmado pelo relato da troca real e associação externa. Há testes automatizados em <code>control/test_bridge.py</code>; a presença do arquivo não é apresentada como resultado de execução nesta entrega. Interrupção de USB e recuperação de rodadas são ensaios documentados sem resultado físico específico disponível.</p></section>
+<section class="doc-section" id="doc-firmware" tabindex="-1"><h3>04 // FIRMWARE AI THINKER ESP32-CAM</h3>
+<h4>Arquivo</h4><p><code>control/firmware/scct_control/scct_control.ino</code>. Componentes: <code>esp_camera</code>, <code>WiFi</code>, <code>WebServer</code>, <code>Preferences</code> e sockets lwIP.</p>
+<h4>Funcionamento</h4><p>Integra a câmera e o streaming MJPEG ao controle serial autenticado. A página local atende em <code>/</code> e o stream em <code>/stream</code>. O controle de senha chega pela USB/UART, sem rota HTTP de controle no AP.</p>
+<p>O comando valida identificador, chave e índice de escolha; reinicia o AP com a senha selecionada e grava <code>ap-record</code> em Preferences. Só envia <code>APPLIED</code> depois de configurar o AP e persistir o registro. Repetir a última rodada com o mesmo índice permite confirmar sem criar uma escolha distinta.</p>
+<p>No código de referência, o SSID é <code>SILENT_BREACH</code> e a senha inicial, sem registro anterior, é <code>admin123</code>. Depois disso, a placa restaura a última escolha persistida. O botão de próximo participante no tablet não altera esse estado.</p>
+<details class="doc-code"><summary>scct_control.ino // troca do AP e confirmação</summary><pre tabindex="0" aria-label="scct_control.ino // troca do AP e confirmação"><code>apGeneration++;
+  WiFi.softAPdisconnect(true); // All demo AP clients disconnect here.
+  delay(250);
+  WiFi.mode(WIFI_AP);
+  apReady = WiFi.softAP(SSID, PASSWORDS[selected]);
+  if (!apReady) { Serial.println(&quot;ERROR &quot; + id + &quot; AP&quot;); return; }
+  // One durable record keeps id and password choice consistent across power loss.
+  String record = id + &quot; &quot; + String(selected);
+  if (prefs.putString(&quot;ap-record&quot;, record) == 0) { Serial.println(&quot;ERROR &quot; + id + &quot; STORAGE&quot;); return; }
+  lastID = id;
+  activeChoice = selected;
+  Serial.println(&quot;APPLIED &quot; + id); // Sent only after softAP succeeds and record persists.</code></pre></details>
+<h4>Teste físico registrado</h4><p>Miguel informou que um segundo dispositivo conectou com <code>password</code>. Esse resultado confirma a senha usada naquela rodada. A confirmação serial não substitui o ensaio externo para as demais opções.</p>
+<h4>Verificações ainda sem resultado registrado</h4><p>Associação com cada uma das demais senhas, persistência após corte de alimentação, recuperação de falhas e streaming durante a troca do AP.</p></section>
+<section class="doc-section" id="doc-network" tabindex="-1"><h3>05 // NMAP E WIRESHARK</h3>
+<p>Documentação baseada nos LOG_015 e LOG_016, preservados integralmente no Diário. Ambiente relatado: PLOT, celular A15 com Termux e rede <code>10.0.0.0/24</code>. Não são comandos de controle da ESP32-CAM.</p>
+<h4>Nmap // funcionamento e comandos registrados</h4>
+<pre class="doc-pre" tabindex="0" aria-label="Comandos registrados no teste Nmap"><code>nmap -sn 10.0.0.0/24
+nmap -sV 10.0.0.56
+# No A15 / Termux:
+python -m http.server 8080
+# No PLOT, depois de iniciar o servidor:
+nmap -sV -p 8080 10.0.0.56</code></pre>
+<p>Relato: hosts ativos encontrados; portas verificadas fechadas antes do servidor; <code>8080/tcp open</code> depois de iniciá-lo. <code>-sn</code> descobre hosts sem varredura de portas; <code>-sV</code> tenta identificar serviço/versão. O teste sem <code>-p</code> não descreve todas as portas possíveis. Porta aberta não comprova vulnerabilidade.</p>
+<h4>Wireshark // funcionamento e filtros registrados</h4>
+<pre class="doc-pre" tabindex="0" aria-label="Comando, filtro e acesso do teste Wireshark"><code>wireshark
+# Filtro de exibição:
+ip.addr==10.0.0.56
+# Acesso feito pelo PLOT:
+http://10.0.0.56:8080</code></pre>
+<p>Relato: requisição HTTP <code>GET</code> observada ao acessar o servidor do A15. O filtro abrange os pacotes IPv4 com esse endereço na origem ou no destino, sem limitar à porta 8080.</p>
+<h4>Arquivos de evidência</h4><p>As saídas completas do Nmap, o arquivo de captura do Wireshark e imagens desse teste não estão anexados ao acervo disponível. Nomes de arquivos de captura, resultados adicionais e trechos de código inexistentes não foram criados.</p>
+<p>As referências oficiais dos comandos e filtros continuam disponíveis nos registros originais do Diário.</p></section>
+</div></div></dialog>
+
 <script>
 "use strict";
 const menuToggle = document.getElementById('menuToggle');
@@ -1037,5 +1174,57 @@ topBtn.addEventListener('click',()=>{
   document.getElementById('home').focus({preventScroll:true});
   window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
 });
+
+
+// Subjanela nativa com fundo inerte e ciclo explícito de foco por teclado.
+(() => {
+  const dialog = document.getElementById('technical-docs');
+  const closeButton = dialog.querySelector('.doc-close');
+  const scroller = dialog.querySelector('.doc-scroll');
+  let opener = null;
+  let startedOnBackdrop = false;
+  function outside(event) {
+    const rect = dialog.getBoundingClientRect();
+    return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+  }
+  document.querySelectorAll('[data-doc]').forEach(button => {
+    button.addEventListener('click', () => {
+      opener = button;
+      dialog.showModal();
+      document.body.classList.add('docs-open');
+      const target = document.getElementById('doc-' + button.dataset.doc);
+      scroller.scrollTop = button.dataset.doc === 'overview' ? 0 : target.offsetTop - scroller.offsetTop;
+      closeButton.focus({preventScroll:true});
+    });
+  });
+  closeButton.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('keydown', event => {
+    if (event.key !== 'Tab') return;
+    const items = [...dialog.querySelectorAll('button,a[href],summary,[tabindex="0"]')]
+      .filter(element => !element.disabled && element.getClientRects().length > 0);
+    const first = items[0], last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault(); last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault(); first.focus();
+    }
+  });
+  dialog.addEventListener('pointerdown', event => { startedOnBackdrop = event.target === dialog && outside(event); });
+  dialog.addEventListener('click', event => {
+    if (startedOnBackdrop && event.target === dialog && outside(event)) dialog.close();
+    startedOnBackdrop = false;
+  });
+  dialog.addEventListener('cancel', event => { event.preventDefault(); dialog.close(); });
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('docs-open');
+    if (opener && opener.isConnected) opener.focus({preventScroll:true});
+  });
+  dialog.querySelectorAll('.doc-nav a').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    const target = dialog.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({block:'start', behavior:'instant'});
+    target.focus({preventScroll:true});
+  }));
+})();
 
 </script></body></html>
